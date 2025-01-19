@@ -1,59 +1,78 @@
 #include <stdio.h>
 
-// Function to swap two elements
-void swap(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
+void merge(int arr[], int left, int mid, int right)
+{
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
 
-// Partition function
-int partition(int arr[], int low, int high) {
-    int pivot = arr[high]; // Pivot element
-    int i = low - 1;       // Index of smaller element
+    int leftArr[n1], rightArr[n2];
 
-    for (int j = low; j < high; j++) {
-        if (arr[j] < pivot) { // If the current element is smaller than the pivot
+    for (int i = 0; i < n1; i++)
+        leftArr[i] = arr[left + i];
+    for (int j = 0; j < n2; j++)
+        rightArr[j] = arr[mid + 1 + j];
+
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2)
+    {
+        if (leftArr[i] <= rightArr[j])
+        {
+            arr[k] = leftArr[i];
             i++;
-            swap(&arr[i], &arr[j]);
         }
+        else
+        {
+            arr[k] = rightArr[j];
+            j++;
+        }
+        k++;
     }
-    // Place the pivot in its correct position
-    swap(&arr[i + 1], &arr[high]);
-    return i + 1;
+
+    while (i < n1)
+    {
+        arr[k] = leftArr[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2)
+    {
+        arr[k] = rightArr[j];
+        j++;
+        k++;
+    }
 }
 
-// Quick Sort function
-void quickSort(int arr[], int low, int high) {
-    if (low < high) {
-        // Partition the array
-        int pi = partition(arr, low, high);
-
-        // Recursively sort elements before and after partition
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
+void mergeSort(int arr[], int left, int right)
+{
+    if (left < right)
+    {
+        int mid = left + (right - left) / 2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+        merge(arr, left, mid, right);
     }
 }
 
-// Function to print the array
-void printArray(int arr[], int size) {
-    for (int i = 0; i < size; i++) {
+int main()
+{
+    int arrSize;
+    printf("Enter the Size of the array: ");
+    scanf("%d", &arrSize);
+    int arr[arrSize];
+
+    printf("Enter the values of the arraY:\n");
+    for (int i = 0; i < arrSize; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    mergeSort(arr, 0, arrSize - 1);
+
+    printf("Sorted array: ");
+    for (int i = 0; i < arrSize; i++)
+    {
         printf("%d ", arr[i]);
     }
-    printf("\n");
-}
-
-int main() {
-    int arr[] = {64, 25, 12, 22, 11};
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    printf("Original array: \n");
-    printArray(arr, n);
-
-    quickSort(arr, 0, n - 1);
-
-    printf("Sorted array: \n");
-    printArray(arr, n);
-
     return 0;
 }
