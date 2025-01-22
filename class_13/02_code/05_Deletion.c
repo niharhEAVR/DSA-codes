@@ -1,115 +1,137 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Node {
+struct Node
+{
     int data;
-    struct Node* next;
+    struct Node *next;
 };
 
 // Function to print the linked list
-void printList(struct Node* head) {
-    struct Node* temp = head;
-    while (temp != NULL) {
-        printf("%d -> ", temp->data);
-        temp = temp->next;
+void printList(struct Node *head)
+{
+    while (head != NULL)
+    {
+        printf("%d -> ", head->data);
+        head = head->next;
     }
     printf("NULL\n");
 }
 
 // Function to delete the first node
-void deleteFromBeginning(struct Node** head) {
-    if (*head == NULL) {
+void deleteFromBeginning(struct Node **head)
+{
+    if (*head == NULL)
+    {
         printf("List is empty.\n");
         return;
     }
-    struct Node* temp = *head;
+    struct Node *temp = *head;
     *head = (*head)->next;
     free(temp);
 }
 
 // Function to delete the last node
-void deleteFromEnd(struct Node** head) {
-    if (*head == NULL) {
+void deleteFromEnd(struct Node **head)
+{
+    if (*head == NULL)
+    {
         printf("List is empty.\n");
         return;
     }
-    if ((*head)->next == NULL) {
+    if ((*head)->next == NULL)
+    {
         free(*head);
         *head = NULL;
         return;
     }
-    struct Node* temp = *head;
-    while (temp->next->next != NULL) {
+    struct Node *temp = *head;
+    while (temp->next->next != NULL)
+    {
         temp = temp->next;
     }
     free(temp->next);
-    temp->next = NULL;
+    temp->next = NULL; 
 }
 
 // Function to delete a node at a specific position
-void deleteFromPosition(struct Node** head, int position) {
-    if (*head == NULL) {
+void deleteFromPosition(struct Node **head, int position)
+{
+    if (*head == NULL)
+    {
         printf("List is empty.\n");
         return;
     }
-    if (position == 0) {
+    if (position == 0)
+    {
         deleteFromBeginning(head);
         return;
     }
-    struct Node* temp = *head;
-    for (int i = 0; temp != NULL && i < position - 1; i++) {
+    struct Node *temp = *head;
+    for (int i = 0; temp != NULL && i < position - 1; i++)
+    {
         temp = temp->next;
     }
-    if (temp == NULL || temp->next == NULL) {
+    if (temp == NULL || temp->next == NULL)
+    {
         printf("Position out of bounds.\n");
         return;
     }
-    struct Node* nodeToDelete = temp->next;
+    struct Node *nodeToDelete = temp->next;
     temp->next = temp->next->next;
     free(nodeToDelete);
 }
 
 // Function to delete a node by its value
-void deleteByValue(struct Node** head, int value) {
-    if (*head == NULL) {
+void deleteByValue(struct Node **head, int value)
+{
+    if (*head == NULL)
+    {
         printf("List is empty.\n");
         return;
     }
-    if ((*head)->data == value) {
+    if ((*head)->data == value)
+    {
         deleteFromBeginning(head);
         return;
     }
-    struct Node* temp = *head;
-    while (temp->next != NULL && temp->next->data != value) {
+    struct Node *temp = *head;
+    while (temp->next != NULL && temp->next->data != value)
+    {
         temp = temp->next;
     }
-    if (temp->next == NULL) {
+    if (temp->next == NULL)
+    {
         printf("Value not found.\n");
         return;
     }
-    struct Node* nodeToDelete = temp->next;
+    struct Node *nodeToDelete = temp->next;
     temp->next = temp->next->next;
     free(nodeToDelete);
 }
 
 // Function to add a node at the end
-void append(struct Node** head, int newData) {
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-    struct Node* last = *head;
+void append(struct Node **head, int newData)
+{
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *last = *head;
     newNode->data = newData;
     newNode->next = NULL;
-    if (*head == NULL) {
+    if (*head == NULL)
+    {
         *head = newNode;
         return;
     }
-    while (last->next != NULL) {
+    while (last->next != NULL)
+    {
         last = last->next;
     }
     last->next = newNode;
 }
 
-int main() {
-    struct Node* head = NULL;
+int main()
+{
+    struct Node *head = NULL;
 
     // Create a linked list
     append(&head, 15);
@@ -134,8 +156,8 @@ int main() {
     deleteFromPosition(&head, 2);
     printList(head);
 
-    printf("Deleting by value 10...\n");
-    deleteByValue(&head, 10);
+    printf("Deleting by value 40...\n");
+    deleteByValue(&head, 40);
     printList(head);
 
     return 0;

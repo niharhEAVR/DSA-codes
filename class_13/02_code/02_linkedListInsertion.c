@@ -9,11 +9,13 @@ struct Node
 
 void linkedListTraversal(struct Node *ptr)
 {
+    printf("Elements are: ");
     while (ptr != NULL)
     {
-        printf("Elemnet: %d\n", ptr->data);
+        printf("%d -> ", ptr->data);
         ptr = ptr->next;
     }
+    printf("NULL");
 }
 
 struct Node *insertAtIndex(struct Node *head, int data, int index)
@@ -63,7 +65,7 @@ int main()
 
     linkedListTraversal(head);
     printf("\n");
-    head = insertAtIndex(head, 56, 1);
+    head = insertAtIndex(head, 56, 2);
     linkedListTraversal(head);
     printf("\n");
     head = insertFirstElement(head, 44);
