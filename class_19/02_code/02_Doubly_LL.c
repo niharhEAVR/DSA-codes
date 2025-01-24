@@ -46,8 +46,9 @@ void insertAtFirst(struct Node **head, int data)
     *head = newNode;
 }
 
-void deleteAtFirst(struct Node** head){
-    struct Node* deleteNode = *head;
+void deleteAtFirst(struct Node **head)
+{
+    struct Node *deleteNode = *head;
 
     *head = (*head)->next;
     (*head)->prev = NULL;
@@ -55,26 +56,26 @@ void deleteAtFirst(struct Node** head){
     free(deleteNode);
 }
 
-// void deleteAtEnd(struct Node** head){
-//     struct Node *temp = *head;
-//     while (temp->next!=NULL)
-//     {
-//         temp = temp->next;
-//     }
+void deleteAtEnd(struct Node **head)
+{
+    struct Node *temp = *head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
 
-//     struct Node* deleteNode = temp;
+    struct Node *deleteNode = temp;
 
-//     temp = temp->prev;
-//     temp->next = NULL;
+    temp = temp->prev;
+    temp->next = NULL;
 
-//     while (temp!=NULL)
-//     {
-//         temp = temp->prev;
-//     }
-//     *head = temp;
-//     free(deleteNode);
-    
-// }
+    while (temp->prev != NULL)
+    {
+        temp = temp->prev;
+    }
+    *head = temp;
+    free(deleteNode);
+}
 
 // Function to display the list forward
 void displayForward(struct Node *head)
@@ -117,8 +118,7 @@ int main()
     insertAtEnd(&head, 20);
     insertAtEnd(&head, 30);
 
-    insertAtFirst(&head,9);
-
+    insertAtFirst(&head, 9);
 
     // Display the list forward
     displayForward(head);
