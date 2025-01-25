@@ -93,6 +93,8 @@ int main()
 {
     char expr[] = "{[(5+6)(a+b)*[c-d]]}";
 
+    puts(expr);
+    printf("%d",strlen(expr));
     if (isBalanced(expr))
     {
         printf("The expression is balanced.\n");
