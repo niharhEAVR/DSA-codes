@@ -56,23 +56,13 @@ void mergeSort(int arr[], int left, int right)
 
 int main()
 {
-    int arrSize;
-    printf("Enter the Size of the array: ");
-    scanf("%d", &arrSize);
-    int arr[arrSize];
+    int arr[] = {38, 27, 43, 3, 9, 82, 10};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-    printf("Enter the values of the arraY:\n");
-    for (int i = 0; i < arrSize; i++)
-    {
-        scanf("%d", &arr[i]);
-    }
-
-    mergeSort(arr, 0, arrSize - 1);
+    mergeSort(arr, 0, n - 1);
 
     printf("Sorted array: ");
-    for (int i = 0; i < arrSize; i++)
-    {
+    for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
-    }
     return 0;
 }
