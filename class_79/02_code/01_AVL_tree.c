@@ -2,40 +2,45 @@
 #include <stdlib.h>
 
 // Define a node structure
-struct Node {
+typedef struct Node
+{
     int data;
-    struct Node* left;
-    struct Node* right;
+    struct Node *left;
+    struct Node *right;
     int height;
-};
+} Node;
 
 // Function to create a new node
-struct Node* createNode(int data) {
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+Node *createNode(int data)
+{
+    Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = data;
     newNode->left = newNode->right = NULL;
-    newNode->height = 1;  // New node is initially at height 1
+    newNode->height = 1; // New node is initially at height 1
     return newNode;
 }
 
 // Function to get the height of a node
-int height(struct Node* node) {
+int height(Node *node)
+{
     if (node == NULL)
         return 0;
     return node->height;
 }
 
 // Function to get the balance factor of a node
-int getBalance(struct Node* node) {
+int getBalance(Node *node)
+{
     if (node == NULL)
         return 0;
     return height(node->left) - height(node->right);
 }
 
 // Right Rotation (Single Rotation)
-struct Node* rightRotate(struct Node* y) {
-    struct Node* x = y->left;
-    struct Node* T2 = x->right;
+Node *rightRotate(Node *y)
+{
+    Node *x = y->left;
+    Node *T2 = x->right;
 
     // Perform rotation
     x->right = y;
@@ -45,13 +50,14 @@ struct Node* rightRotate(struct Node* y) {
     y->height = 1 + (height(y->left) > height(y->right) ? height(y->left) : height(y->right));
     x->height = 1 + (height(x->left) > height(x->right) ? height(x->left) : height(x->right));
 
-    return x;  // New root
+    return x; // New root
 }
 
 // Left Rotation (Single Rotation)
-struct Node* leftRotate(struct Node* x) {
-    struct Node* y = x->right;
-    struct Node* T2 = y->left;
+Node *leftRotate(Node *x)
+{
+    Node *y = x->right;
+    Node *T2 = y->left;
 
     // Perform rotation
     y->left = x;
@@ -61,11 +67,12 @@ struct Node* leftRotate(struct Node* x) {
     x->height = 1 + (height(x->left) > height(x->right) ? height(x->left) : height(x->right));
     y->height = 1 + (height(y->left) > height(y->right) ? height(y->left) : height(y->right));
 
-    return y;  // New root
+    return y; // New root
 }
 
 // Function to insert a node into the AVL tree
-struct Node* insert(struct Node* node, int data) {
+Node *insert(Node *node, int data)
+{
     // 1. Perform the normal BST insertion
     if (node == NULL)
         return createNode(data);
@@ -75,7 +82,7 @@ struct Node* insert(struct Node* node, int data) {
     else if (data > node->data)
         node->right = insert(node->right, data);
     else
-        return node;  // Duplicate values are not allowed
+        return node; // Duplicate values are not allowed
 
     // 2. Update the height of this ancestor node
     node->height = 1 + (height(node->left) > height(node->right) ? height(node->left) : height(node->right));
@@ -94,13 +101,15 @@ struct Node* insert(struct Node* node, int data) {
         return leftRotate(node);
 
     // Left Right Case (Left-Right Rotation)
-    if (balance > 1 && data > node->left->data) {
+    if (balance > 1 && data > node->left->data)
+    {
         node->left = leftRotate(node->left);
         return rightRotate(node);
     }
 
     // Right Left Case (Right-Left Rotation)
-    if (balance < -1 && data < node->right->data) {
+    if (balance < -1 && data < node->right->data)
+    {
         node->right = rightRotate(node->right);
         return leftRotate(node);
     }
@@ -110,8 +119,10 @@ struct Node* insert(struct Node* node, int data) {
 }
 
 // Function to print the tree (Inorder Traversal)
-void inorder(struct Node* root) {
-    if (root != NULL) {
+void inorder(Node *root)
+{
+    if (root != NULL)
+    {
         inorder(root->left);
         printf("%d ", root->data);
         inorder(root->right);
@@ -119,8 +130,9 @@ void inorder(struct Node* root) {
 }
 
 // Main function to test the AVL tree
-int main() {
-    struct Node* root = NULL;
+int main()
+{
+    Node *root = NULL;
 
     // Insert nodes
     root = insert(root, 10);

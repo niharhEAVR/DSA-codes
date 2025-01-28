@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 // Define the structure for a node in the AVL Tree
-struct Node {
+struct Node
+{
     int data;
     struct Node *left;
     struct Node *right;
@@ -10,21 +11,24 @@ struct Node {
 };
 
 // Function to get the height of a node
-int height(struct Node *N) {
+int height(struct Node *N)
+{
     if (N == NULL)
         return 0;
     return N->height;
 }
 
 // Function to get the balance factor of a node
-int getBalance(struct Node *N) {
+int getBalance(struct Node *N)
+{
     if (N == NULL)
         return 0;
     return height(N->left) - height(N->right);
 }
 
 // Function to perform a right rotation
-struct Node* rightRotate(struct Node *y) {
+struct Node *rightRotate(struct Node *y)
+{
     struct Node *x = y->left;
     struct Node *T2 = x->right;
 
@@ -41,7 +45,8 @@ struct Node* rightRotate(struct Node *y) {
 }
 
 // Function to perform a left rotation
-struct Node* leftRotate(struct Node *x) {
+struct Node *leftRotate(struct Node *x)
+{
     struct Node *y = x->right;
     struct Node *T2 = y->left;
 
@@ -58,20 +63,23 @@ struct Node* leftRotate(struct Node *x) {
 }
 
 // Function to perform a left-right rotation
-struct Node* leftRightRotate(struct Node *node) {
+struct Node *leftRightRotate(struct Node *node)
+{
     node->left = leftRotate(node->left);
     return rightRotate(node);
 }
 
 // Function to perform a right-left rotation
-struct Node* rightLeftRotate(struct Node *node) {
+struct Node *rightLeftRotate(struct Node *node)
+{
     node->right = rightRotate(node->right);
     return leftRotate(node);
 }
 
 // Function to create a new node
-struct Node* newNode(int data) {
-    struct Node* node = (struct Node*)malloc(sizeof(struct Node));
+struct Node *newNode(int data)
+{
+    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
     node->data = data;
     node->left = node->right = NULL;
     node->height = 1; // New node is initially at height 1
@@ -79,7 +87,8 @@ struct Node* newNode(int data) {
 }
 
 // Function to insert a node into the AVL tree
-struct Node* insert(struct Node* node, int data) {
+struct Node *insert(struct Node *node, int data)
+{
     // 1. Perform the normal BST insert
     if (node == NULL)
         return newNode(data);
@@ -120,8 +129,10 @@ struct Node* insert(struct Node* node, int data) {
 }
 
 // Function to print the tree (in-order traversal)
-void inOrder(struct Node* root) {
-    if (root != NULL) {
+void inOrder(struct Node *root)
+{
+    if (root != NULL)
+    {
         inOrder(root->left);
         printf("%d ", root->data);
         inOrder(root->right);
@@ -129,7 +140,8 @@ void inOrder(struct Node* root) {
 }
 
 // Main function to test the AVL tree
-int main() {
+int main()
+{
     struct Node *root = NULL;
 
     // Insert nodes into the AVL tree
