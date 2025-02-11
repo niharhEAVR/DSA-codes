@@ -40,7 +40,16 @@ void insertAtFirst(struct Node **head, int data)
 {
     struct Node *newNode = createNode(data);
 
+    if (*head == NULL)
+    {
+        *head = newNode;
+        return;
+    }
+
     struct Node *temp = *head;
+    while(temp->prev != NULL){
+        temp = temp->prev;
+    }
     temp->prev = newNode;
     newNode->next = temp;
     *head = newNode;
@@ -48,6 +57,11 @@ void insertAtFirst(struct Node **head, int data)
 
 void deleteAtFirst(struct Node **head)
 {
+    if (*head == NULL)
+    {
+        printf("List is Empty!\n");
+        return;
+    }
     struct Node *deleteNode = *head;
 
     *head = (*head)->next;
@@ -80,10 +94,10 @@ void deleteAtEnd(struct Node **head)
 // Function to display the list forward
 void displayForward(struct Node *head)
 {
-    printf("Forward: ");
+    printf("Forward: NULL <-> ");
     while (head != NULL)
     {
-        printf("%d -> ", head->data);
+        printf("%d <-> ", head->data);
         head = head->next;
     }
     printf("NULL\n");
@@ -99,10 +113,10 @@ void displayBackward(struct Node *head)
     { // Traverse to the last node
         head = head->next;
     }
-    printf("Backward: ");
+    printf("Backward: NULL <-> ");
     while (head != NULL)
     { // Traverse backward
-        printf("%d -> ", head->data);
+        printf("%d <-> ", head->data);
         head = head->prev;
     }
     printf("NULL\n");
@@ -113,6 +127,7 @@ int main()
 {
     struct Node *head = NULL;
 
+    deleteAtFirst(&head);
     // Insert nodes
     insertAtEnd(&head, 10);
     insertAtEnd(&head, 20);

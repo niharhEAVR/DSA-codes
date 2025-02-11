@@ -51,7 +51,7 @@ int main()
     Node *head;
     Node *second;
     Node *third;
-    Node *fourth;
+    Node *fourth = NULL;
 
     head = (Node *)malloc(sizeof(Node));
     second = (Node *)malloc(sizeof(Node));

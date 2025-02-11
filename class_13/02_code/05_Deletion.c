@@ -27,7 +27,7 @@ void deleteFromBeginning(struct Node **head)
         return;
     }
     struct Node *temp = *head;
-    *head = (*head)->next;
+    *head = temp->next;
     free(temp);
 }
 
@@ -148,16 +148,16 @@ int main()
     deleteFromBeginning(&head);
     printList(head);
 
-    printf("Deleting from the end...\n");
-    deleteFromEnd(&head);
-    printList(head);
+    // printf("Deleting from the end...\n");
+    // deleteFromEnd(&head);
+    // printList(head);
 
     printf("Deleting from position 2...\n");
     deleteFromPosition(&head, 2);
     printList(head);
 
-    printf("Deleting by value 40...\n");
-    deleteByValue(&head, 40);
+    printf("Deleting by value 93...\n");
+    deleteByValue(&head, 93);
     printList(head);
 
     return 0;

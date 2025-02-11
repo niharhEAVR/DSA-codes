@@ -24,7 +24,12 @@ int main()
     head->data = 10;
     head->next = NULL;
     modifyLocalHead(head);
-    printf("The value of the heads data: %d\n", head->data);
+    printf("The address it stores: %d\n", head);
+    printf("The address it stores: %d\n", (struct Node *)malloc(sizeof(struct Node)));
+
+    // so the context is head is storing the address of the node, thats why we can only change the working of the node structure not the actual head.
+
+    printf("The address it stores: %d\n", &head);
     modifyOriginalHead(&head);
     if (head == NULL)
         printf("Head is NULL\n");
