@@ -44,9 +44,9 @@ int pop(struct stack *ptr)
     }
     else
     {
-        int poppedValue = ptr->arr[(ptr->top)--];
+        int poppedValue = ptr->arr[ptr->top];
         printf("Popped %d from the stack.\n", poppedValue);
-        return poppedValue;
+        ptr->arr[(ptr->top)--] = 0;
     }
 }
 
@@ -60,6 +60,10 @@ int peek(struct stack *ptr)
     }
     else
     {
+        for (int i = 0; i < ptr->size; i++)
+        {
+            printf("%d ",ptr->arr[i]);
+        }
         return ptr->arr[ptr->top];
     }
 }
@@ -74,15 +78,24 @@ int main()
         return 1;
     }
 
-    s->size = 80;
+    s->size = 10;
     s->top = -1;
     s->arr = (int *)malloc(s->size * sizeof(int));
+    for (int i = 0; i < s->size; i++)
+    {
+        s->arr[i] = 0;
+    }
+    
     if (s->arr == NULL)
     {
         printf("Memory allocation for array failed.\n");
         free(s); // Free the stack structure if array allocation fails
         return 1;
     }
+
+    printf("Size of struct stack: %lu bytes\n", sizeof(struct stack));
+    printf("Size of dynamically allocated arr: %lu bytes\n", s->size * sizeof(int));
+    printf("Total allocated memory: %lu bytes\n", sizeof(struct stack) + (s->size * sizeof(int)));
 
     // Example usage
     push(s, 10);

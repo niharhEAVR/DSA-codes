@@ -42,7 +42,7 @@ void display() {
     } else {
         printf("Stack elements: ");
         int i; // Declare 'i' outside of the for loop
-        for (i = MAX; i >= 0; i--) {
+        for (i = 0; i < MAX; i++) {
             printf("%d ", stack[i]);
         }
         printf("\n");
