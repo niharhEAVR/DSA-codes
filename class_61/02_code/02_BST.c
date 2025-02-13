@@ -134,5 +134,11 @@ int main()
     inorderTraversal(root);
     printf("\n");
 
+    deleteValue = 70;
+    root = deleteNode(root, deleteValue);
+    printf("Inorder Traversal after deletion of %d: ", deleteValue);
+    inorderTraversal(root);
+    printf("\n");
+
     return 0;
 }

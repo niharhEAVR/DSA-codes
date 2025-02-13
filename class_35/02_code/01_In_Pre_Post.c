@@ -103,14 +103,27 @@ void infixToPostfix(char *infix, char *postfix)
 
 int main()
 {
-    char infix[MAX], postfix[MAX];
+    while (1)
+    {
+        char infix[MAX], postfix[MAX];
 
-    printf("Enter an infix expression: ");
-    gets(infix);
-
-    infixToPostfix(infix, postfix);
-
-    printf("Postfix expression: %s\n", postfix);
-
-    return 0;
+        int choice;
+        printf("1.Infix to Postfix Operation\n2.Exit the Code\nEnter your choice: ");
+        scanf("%d",&choice);
+        fflush(stdin);
+        switch (choice)
+        {
+            case 1:
+            printf("Enter an infix expression: ");
+            gets(infix);
+            fflush(stdin);
+            infixToPostfix(infix, postfix);
+            fflush(stdin);
+            printf("Postfix expression: %s\n", postfix);
+            break;
+        default:
+            printf("Exiting...");
+            return 0;
+        }
+    }
 }

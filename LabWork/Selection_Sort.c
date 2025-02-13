@@ -1,4 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define SIZE 100
 
 void selectionSort(int arr[], int n) {
     int i, j, minIndex, temp;
@@ -28,7 +32,11 @@ void printArray(int arr[], int n) {
 }
 
 int main() {
-    int arr[] = {64, 25, 12, 47, 11};
+    int arr[SIZE];
+    srand(time(NULL));
+    for (int i = 0; i < SIZE; i++) {
+        arr[i] = rand() % 1000 + 1;
+    }
     int n = sizeof(arr) / sizeof(arr[0]);
 
     printf("Original array: ");
@@ -38,6 +46,7 @@ int main() {
 
     printf("Sorted array: ");
     printArray(arr, n);
+
 
     return 0;
 }

@@ -70,6 +70,19 @@ Node *leftRotate(Node *x)
     return y; // New root
 }
 
+struct Node *leftRightRotate(struct Node *node)
+{
+    node->left = leftRotate(node->left);
+    return rightRotate(node);
+}
+
+// Function to perform a right-left rotation
+struct Node *rightLeftRotate(struct Node *node)
+{
+    node->right = rightRotate(node->right);
+    return leftRotate(node);
+}
+
 // Function to insert a node into the AVL tree
 Node *insert(Node *node, int data)
 {
@@ -102,17 +115,11 @@ Node *insert(Node *node, int data)
 
     // Left Right Case (Left-Right Rotation)
     if (balance > 1 && data > node->left->data)
-    {
-        node->left = leftRotate(node->left);
-        return rightRotate(node);
-    }
+        return leftRightRotate(node);
 
     // Right Left Case (Right-Left Rotation)
     if (balance < -1 && data < node->right->data)
-    {
-        node->right = rightRotate(node->right);
-        return leftRotate(node);
-    }
+        return rightLeftRotate(node);
 
     // Return the (unchanged) node pointer
     return node;
