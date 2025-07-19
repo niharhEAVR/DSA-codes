@@ -1,4 +1,4 @@
-To calculate the **time complexity** of an algorithm, you analyze the number of operations or steps the algorithm performs as a function of the input size \( n \). Below are the **basic rules** and steps to calculate time complexity.
+To calculate the **time complexity** of an algorithm, we have to analyze the number of operations or steps the algorithm performs as a function of the input size \( n \). Below are the **basic rules** and steps to calculate time complexity.
 
 ---
 

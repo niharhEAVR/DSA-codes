@@ -1,7 +1,3 @@
-Let’s break down the **best case**, **worst case**, and **expected case** for an array of 5 variables with an example algorithm: **Linear Search**. This algorithm is used to find a specific value in the array by checking each element one by one.
-
----
-
 ### **The Setup**
 We have an array of 5 variables:
 \[
@@ -76,5 +72,3 @@ Our task is to find a specific value, \( x \), in this array.
 - **Best Case**: The algorithm performs the least amount of work (e.g., finding \( x \) immediately).
 - **Worst Case**: The algorithm performs the most work (e.g., checking every element).
 - **Expected Case**: The average work the algorithm performs, assuming all scenarios are equally likely.
-
-This analysis helps us understand how the algorithm behaves in different situations!
