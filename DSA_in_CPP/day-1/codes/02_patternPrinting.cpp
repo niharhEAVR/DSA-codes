@@ -182,6 +182,57 @@ int main()
         std::cout << std::endl;
     }
 
-   
+    // *
+    // * *
+    // * * *
+    // * * * *
+    // * * * * *
+    // * * * *
+    // * * *
+    // * *
+    // *
+    for (size_t i = 0; i < 5; i++)
+    {
+        for (size_t j = 0; j <= i; j++)
+        {
+            std::cout << "* ";
+        }
+        std::cout << std::endl;
+    }
+    for (size_t i = 0; i < 4; i++)
+    {
+        for (size_t j = 4 - i; j > 0; j--)
+        {
+            std::cout << "* ";
+        }
+        std::cout << std::endl;
+    }
+
+    // 1
+    // 0 1
+    // 1 0 1
+    // 0 1 0 1
+    // 1 0 1 0 1
+    for (size_t i = 0; i < 6; i++)
+    {
+
+        int start{1};
+        if (i % 2 == 0)
+            start = 0;
+        else
+            start = 1;
+
+        for (size_t j = 0; j < i; j++)
+        {
+            std::cout << start << " ";
+            start = 1 - start;
+        }
+
+        std::cout << std::endl;
+    }
+
+
+
+    
     return 0;
 }

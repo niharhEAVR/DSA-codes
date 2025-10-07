@@ -98,7 +98,7 @@ Instead of `#include <bits/stdc++.h>`, include only what you need:
 
 
 
-## Like when we are sending the Dimensional array in the function parameter, then we have to manually create the columen size in array, we cant use variables!
+>#### Like when we are sending the Dimensional array in the function parameter, then we have to manually create the column size in array, we cant use variables!
 
 ## ❌ You **cannot use variables for the column size** in 2D arrays.
 
