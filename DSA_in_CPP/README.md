@@ -8,13 +8,13 @@
 
 ---
 
-### DSA finished upto video number: 6 > time 31:45 minute
+### DSA finished upto video number: 7
 
 ---
 
 ### In striver website the dsa finished up :
-    -> Step1: Learn the basics > Lec 3 (stl) 
+    -> Step1: Learn the basics > Lec 4
 
 ---
 
-### Everyday solve a single pattern (max time 30 minute)
+### Everyday solve a single pattern (max time 20 minute)
