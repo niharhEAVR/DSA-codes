@@ -54,7 +54,7 @@ void advRevArrRec(int i, int n, int arr[])
     advRevArrRec(i + 1, n, arr);
 }
 
-//advanced logic
+// advanced logic
 bool isPalindromeRec(const std::string &s, int left, int right)
 {
     while (left < right && !std::isalnum(s[left]))
@@ -76,6 +76,15 @@ bool isPalindrome(std::string s)
     return isPalindromeRec(s, 0, s.size() - 1);
 }
 
+int fibo(int n)
+{
+    if (n == 0)
+        return 0;
+    if (n == 1)
+        return 1;
+    return fibo(n - 1) + fibo(n - 2);
+}
+
 int main()
 {
     // printNameUsRec(5);
@@ -84,45 +93,66 @@ int main()
 
     // std::cout << facto(5);
 
-    // int arr[5] = {1, 2, 3, 4, 5};
-    // // revArrRec(0, 5, 5, arr);
-    // advRevArrRec(0, 5, arr);
-    // for (size_t i = 0; i < 5; i++)
-    // {
-    //     std::cout << arr[i] << " ";
-    // }
-    //     advRevArrRec(0)
-    //     swap(0,4)
-    //      |
-    //      └── advRevArrRec(1)
-    //            swap(1,3)
-    //                |
-    //                └── advRevArrRec(2)
-    //                      base case → stop
+    {
+        // int arr[5] = {1, 2, 3, 4, 5};
+        // // revArrRec(0, 5, 5, arr);
+        // advRevArrRec(0, 5, arr);
+        // for (size_t i = 0; i < 5; i++)
+        // {
+        //     std::cout << arr[i] << " ";
+        // }
+        //     advRevArrRec(0)
+        //     swap(0,4)
+        //      |
+        //      └── advRevArrRec(1)
+        //            swap(1,3)
+        //                |
+        //                └── advRevArrRec(2)
+        //                      base case → stop
+    }
 
-    // std::string s = "A man, a plan, a 97831rhbcanal: Panama";
-    // std::string refined = "";
-    // for (auto i : s)
-    // {
-    //     if(std::isalnum(i)){
-    //         refined += std::tolower(i);
-    //     }
-    // }
-    // std::string swp = "";
-    // int n = refined.size();
-    // for (int i = n-1; i >= 0; i--)
-    // {
-    //     swp+=refined[i];
-    // }
+    {
+        // std::string s = "A man, a plan, a 97831rhbcanal: Panama";
+        // std::string refined = "";
+        // for (auto i : s)
+        // {
+        //     if(std::isalnum(i)){
+        //         refined += std::tolower(i);
+        //     }
+        // }
+        // std::string swp = "";
+        // int n = refined.size();
+        // for (int i = n-1; i >= 0; i--)
+        // {
+        //     swp+=refined[i];
+        // }
 
-    // if(swp == refined) {
-    //     std::cout<<true<<std::endl;
-    // }else{
-    //     std::cout<<false<<std::endl;
-    // }
+        // if(swp == refined) {
+        //     std::cout<<true<<std::endl;
+        // }else{
+        //     std::cout<<false<<std::endl;
+        // }
 
-    std::string s = "A man, a plan, a canal: Panama";
-    std::cout << isPalindrome(s) << std::endl;
+        std::string s = "A man, a plan, a canal: Panama";
+        // std::cout << isPalindrome(s) << std::endl;
+    }
+
+    {
+        // std::cout<<"fibonacci of 5 is: "<<fibo(5)<<std::endl;
+        //                           fib(5)
+        //                       /              \
+        //                 fib(4)                 fib(3)
+        //                /      \               /      \
+        //          fib(3)       fib(2)       fib(2)    fib(1) return 1
+        //         /     \       /   \         /   \       
+        //    fib(2)   fib(1) fib(1) fib(0)  fib(1) fib(0) return 1
+        //    /   \   return 1     return 1
+        // fib(1) fib(0)
+            // return 1
+
+        // here 5 return 1's thaths why the answer of 5 is 5
+
+    }   
 
     return 0;
 }

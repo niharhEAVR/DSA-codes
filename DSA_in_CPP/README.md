@@ -8,12 +8,12 @@
 
 ---
 
-### DSA finished upto video number: 7
+### DSA finished upto video number: 13
 
 ---
 
 ### In striver website the dsa finished up :
-    -> Step1: Learn the basics > Lec 4
+    -> Step1: Learn the basics > Lec 6
 
 ---
 
