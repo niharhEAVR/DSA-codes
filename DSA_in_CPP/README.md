@@ -8,13 +8,16 @@
 
 ---
 
-### DSA finished upto video number: 13
+### DSA finished upto video number: 15
 
 ---
 
 ### In striver website the dsa finished up :
-    -> Step1: Learn the basics > Lec 6
+    -> Step2 > Lec 2
 
 ---
 
-### Everyday solve a single pattern (max time 20 minute)
+### Todos
+
+### 1. Everyday solve a single pattern (max time 20 minute)
+### 2. Everyday revise the sorting algos with dry run (max time 20 minute)
