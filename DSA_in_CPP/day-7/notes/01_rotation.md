@@ -122,3 +122,113 @@ Glue: [5, 6, 7] + [1, 2, 3, 4]
 ```
 
 The **reverse trick** is just a clever way to achieve that *without* using extra memory.
+
+
+---
+---
+---
+
+
+Let’s analyze the **Time Complexity (TC)** and **Space Complexity (SC)** clearly.
+
+---
+
+### 🔍 Code Summary
+
+Your function:
+
+```cpp
+void rotate(std::vector<int> &nums, int k)
+{
+    int n = nums.size(), d = k % n;
+    if (d <= 0) return;
+
+    int temp[d]; // store last d elements
+
+    // 1️⃣ Copy last d elements
+    for (int i = 0; i < d; i++)
+        temp[i] = nums[i + (n - d)];
+
+    // 2️⃣ Shift first n-d elements to right by d
+    for (int i = n - 1; i >= d; i--)
+        nums[i] = nums[i - d];
+
+    // 3️⃣ Copy back temp into front
+    for (int i = 0; i < d; i++)
+        nums[i] = temp[i];
+}
+```
+
+---
+
+### 🧮 Step-by-Step Complexity Analysis
+
+#### Step 1: Copy last `d` elements
+
+```cpp
+for (int i = 0; i < d; i++)
+    temp[i] = nums[i + (n - d)];
+```
+
+* Runs **d times**
+* ⇒ Time = **O(d)**
+
+#### Step 2: Shift elements
+
+```cpp
+for (int i = n - 1; i >= d; i--)
+    nums[i] = nums[i - d];
+```
+
+* Runs approximately **(n - d)** times
+* ⇒ Time = **O(n - d)**
+
+#### Step 3: Copy back `temp`
+
+```cpp
+for (int i = 0; i < d; i++)
+    nums[i] = temp[i];
+```
+
+* Runs **d times**
+* ⇒ Time = **O(d)**
+
+---
+
+### ⏱️ Total Time Complexity (TC)
+
+Combine all:
+
+[
+O(d) + O(n - d) + O(d) = O(n)
+]
+
+✅ **Time Complexity = O(n)**
+(because every element is moved a constant number of times)
+
+---
+
+### 💾 Space Complexity (SC)
+
+You are creating a **temporary array of size `d`**:
+
+```cpp
+int temp[d];
+```
+
+So:
+
+* Extra memory = proportional to `d`
+* In the worst case, `d` could be as large as `n - 1`
+
+✅ **Space Complexity = O(d)**
+and in worst case → **O(n)**
+
+---
+
+### ⚡ Final Answer
+
+| Complexity Type      | Big-O                   | Explanation                         |
+| -------------------- | ----------------------- | ----------------------------------- |
+| **Time Complexity**  | **O(n)**                | Each element is moved at most once  |
+| **Space Complexity** | **O(d)** (→ O(n) worst) | Temporary array for last d elements |

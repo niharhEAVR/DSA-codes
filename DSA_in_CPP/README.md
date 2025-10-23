@@ -8,12 +8,19 @@
 
 ---
 
-### DSA finished upto video number: 18 > 8:00
+### DSA finished upto video number: 19
 
 ---
 
 ### In striver website the dsa finished up :
     -> Step3 > lec-1:easy
+
+---
+
+### leetcode problem lefts:
+
+1. maximum consecutive ones
+2. find once in twice groups
 
 ---
 
