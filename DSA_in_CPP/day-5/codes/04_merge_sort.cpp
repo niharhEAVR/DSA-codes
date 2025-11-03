@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+#include<iostream>
+#include<vector>
 using namespace std;
 
 void mergee(int arr[], int mid, int low, int high)
@@ -57,9 +59,9 @@ void traverse(int arr[], int n)
 
 int main()
 {
-    int arr[] = {2, 8, 4, 7, 1, 6, 5, 3};
+    int arr[] = {2, 8, 4, 7, 1, 6, 5, 3}; // size = 8
     int size = sizeof(arr) / sizeof(arr[0]);
-    mergeSort(arr, 0, size - 1);
+    mergeSort(arr, 0, size - 1); // arr , 0 , 7
     traverse(arr, size);
     return 0;
 }
