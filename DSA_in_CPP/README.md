@@ -8,7 +8,7 @@
 
 ---
 
-### DSA finished upto video number: 25
+### DSA finished upto video number: 32
 
 ---
 
@@ -18,8 +18,6 @@
 ---
 
 ### leetcode problem lefts:
-
-1. Stock Buy and Sell > day-9
 
 
 ---
@@ -38,7 +36,12 @@
 ### 1. Everyday solve a single pattern (max time 20 minute)
 ### 2. Everyday revise the sorting algos with dry run (max time 20 minute) **
 ### 3. Revise Time & Space complexity sometimes.
-### 4. Revise C++ STL concepts sometimes. **
+### 4. Revise C++ STL concepts with its all the properties once a week (sunday most frequently). **
 ### 5. Revisit the Video number 20 for understanding what he tryna say.
 
 
+---
+
+### Remindings
+
+1. At least solve one problem a day by yourself. Read the problem statement carefully and understand the approach, but never look at the solution until your DSA practice time is over. If you can’t solve it, carry it over to the next day.
