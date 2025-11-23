@@ -370,8 +370,3 @@ Count(3) = 1
 
 * **Time:** O(n) (two passes)
 * **Space:** O(1) (constant space)
-
----
-
-If you want, I can visualize it step-by-step with dry-run diagrams for any custom array you choose.
-Would you like me to?

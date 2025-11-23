@@ -8,12 +8,12 @@
 
 ---
 
-### DSA finished upto video number: 32
+### DSA finished upto video number: 36
 
 ---
 
 ### In striver website the dsa finished up :
-    -> Step3 > Lec 2: Medium
+    -> Step3 > Lec 3: Hard
 
 ---
 
@@ -24,10 +24,12 @@
 
 ## Algorithms Learned so far:
 
-1. Sliding Window, Two Pointer Approaches
-2. Dutch National Flag Algorithm
-3. Moore’s Voting Algorithm
-4. Kadane's Algorithm
+1. Searching & Sorting Algoritms
+2. Sliding Window, Two Pointer Approaches
+3. Dutch National Flag Algorithm
+4. Moore’s Voting Algorithm
+5. Kadane's Algorithm
+6. Combinatorics (nCr)
 
 ---
 

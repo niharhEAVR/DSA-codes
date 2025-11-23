@@ -19,6 +19,7 @@ void traverse(const unordered_map<int, int> &arr)
 
 int longSubArrBetterDebugging(vector<int> &nums, int k)
 {
+    if(nums.empty()) return 0;
     unordered_map<int, int> mp; // prefixSum -> first index
     int sum = 0;
     int maxLen = 0;
@@ -116,9 +117,11 @@ int main()
 {
     vector<int> nums = {1, 2, -1, 2, -1, 3};
     vector<int> nums2 = {1, 2, 0, 0, 0, 0, 3};
+    vector<int> nums3 = {1,2,1,2,1};
     int k = 3;
     // cout << longSubArrBetterDebugging(nums, k) << " = Result" << endl;
-    cout << longSubArrBetterDebugging(nums2, k) << " = Result" << endl;
+    // cout << longSubArrBetterDebugging(nums2, k) << " = Result" << endl;
+    cout << longSubArrBetterDebugging(nums3, k) << " = Result" << endl;
 
     return 0;
 }
