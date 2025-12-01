@@ -59,9 +59,9 @@ void traverse(int arr[], int n)
 
 int main()
 {
-    int arr[] = {2, 8, 4, 7, 1, 6, 5, 3}; // size = 8
+    int arr[] = {12, 8, 9, 3, 11, 5, 4}; // size = 7
     int size = sizeof(arr) / sizeof(arr[0]);
-    mergeSort(arr, 0, size - 1); // arr , 0 , 7
+    mergeSort(arr, 0, size - 1); // arr , 0 , arrSize-1
     traverse(arr, size);
     return 0;
 }

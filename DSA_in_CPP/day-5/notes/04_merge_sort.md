@@ -1,420 +1,728 @@
-**Merge Sort** is a popular **divide and conquer** algorithm used for sorting data efficiently. It divides the input list into smaller parts, sorts them, and then merges them back together in order.
+# 🧩 **Merge Sort – Super Simple Explanation**
+
+## 👶 **Think of it like this:**
+
+You have a big messy pile of cards.
+You **cannot** sort the whole pile at once.
+So you do something smart:
+
+### **Step 1: Keep splitting the pile into half**
+
+Split → split → split → until every pile has **1 card** only.
+
+A single card is always sorted.
+
+### **Step 2: Start merging those piles back**
+
+But while merging, you **combine two sorted piles into one sorted pile**.
+
+That’s it.
+This whole process is called **Merge Sort**.
 
 ---
 
-### 🧠 **Basic Idea**
+# 🧠 **Why this works?**
 
-1. **Divide:** Split the array into two halves.
-2. **Conquer:** Recursively sort each half.
-3. **Combine:** Merge the two sorted halves into one sorted array.
+Because it’s easy to merge two already sorted groups.
 
----
+Example:
+Group A = [2, 7]
+Group B = [3, 5]
 
-### ⚙️ **How It Works (Step-by-Step Example)**
+When merging:
 
-Suppose you have the array:
-`[38, 27, 43, 3, 9, 82, 10]`
+* Compare 2 and 3 → smaller is 2
+* Compare 7 and 3 → smaller is 3
+* Compare 7 and 5 → smaller is 5
+* Put remaining 7
 
-**Step 1: Divide**
-Split into halves repeatedly until each subarray has one element:
-
-```
-[38, 27, 43, 3, 9, 82, 10]
-→ [38, 27, 43, 3] and [9, 82, 10]
-→ [38, 27] [43, 3] [9, 82] [10]
-→ [38] [27] [43] [3] [9] [82] [10]
-```
-
-**Step 2: Conquer (Sort small arrays)**
-Now merge the smallest arrays in sorted order:
-
-```
-[38] + [27] → [27, 38]
-[43] + [3] → [3, 43]
-[9] + [82] → [9, 82]
-[10] remains as is
-```
-
-**Step 3: Combine (Merge sorted arrays)**
-Keep merging sorted subarrays:
-
-```
-[27, 38] + [3, 43] → [3, 27, 38, 43]
-[9, 82] + [10] → [9, 10, 82]
-Finally:
-[3, 27, 38, 43] + [9, 10, 82] → [3, 9, 10, 27, 38, 43, 82]
-```
-
-✅ **Final Sorted Array:** `[3, 9, 10, 27, 38, 43, 82]`
+You get:
+\[
+[2,3,5,7]
+\]
 
 ---
 
-### 🧩 **Algorithm (Pseudocode)**
+# 🎨 **Visual Explanation (Very Simple)**
 
-```text
-mergeSort(arr):
-    if length of arr <= 1:
-        return arr
-    
-    mid = length(arr) // 2
-    left = mergeSort(arr[0:mid])
-    right = mergeSort(arr[mid:])
-    
-    return merge(left, right)
+Suppose array =
+**[4, 2, 7, 1]**
 
-merge(left, right):
-    result = []
-    while both left and right not empty:
-        if left[0] <= right[0]:
-            append left[0] to result and remove it from left
-        else:
-            append right[0] to result and remove it from right
-    append remaining elements of left and right to result
-    return result
+### **Step 1: Split**
+
+```
+[4 2 7 1]
+   /    \
+[4 2]   [7 1]
+ / \     / \
+[4][2] [7][1]
+```
+
+### **Step 2: Merge**
+
+Merge [4] and [2]:
+
+```
+[4] + [2] → [2,4]
+```
+
+Merge [7] and [1]:
+
+```
+[7] + [1] → [1,7]
+```
+
+Now merge [2,4] and [1,7]:
+
+```
+[2,4] + [1,7] → [1,2,4,7]
+```
+
+### **Final Sorted Output:**
+
+\[
+[1,2,4,7]
+\]
+
+---
+
+# 🏁 **One-Line Definition**
+
+**Merge Sort = Split the array until 1 element + merge them back in sorted order.**
+
+---
+
+# ⭐ Time & Space Complexity
+
+\[
+\text{Time} = O(n\log n)
+\]
+\[
+\text{Space} = O(n)
+\]
+
+---
+
+# Example
+
+![](./images/img_mergesort_long.png)
+
+
+# Dry run
+
+```
+int arr[] = {12, 8, 9, 3, 11, 5, 4}; 
+// size = 7
+```
+---
+
+# ⚙️ **Step 0 — Array**
+
+```
+[12, 8, 9, 3, 11, 5, 4]
+```
+
+Merge sort works like this C code structure:
+
+```
+mergeSort(arr, l, r):
+    mid = (l + r) / 2
+    mergeSort(l, mid)
+    mergeSort(mid+1, r)
+    merge(...)
 ```
 
 ---
 
-### ⏱️ **Complexity Analysis**
+# 🔥 **Step 1 — Keep Splitting**
 
-| Case    | Time Complexity | Space Complexity |
-| ------- | --------------- | ---------------- |
-| Best    | O(n log n)      | O(n)             |
-| Average | O(n log n)      | O(n)             |
-| Worst   | O(n log n)      | O(n)             |
-
----
-
-### 💡 **Key Points**
-
-* **Stable:** Yes (preserves the order of equal elements)
-* **Not in-place:** Requires extra memory for merging
-* **Best for:** Large datasets and linked lists
-* **Consistent:** Always O(n log n), even in the worst case (unlike quicksort)
-
-
-
----
----
----
-
-
-Let's dry-run **How program executes it in memory**.
-
----
-
-## 🧠 Array:
+### Level 1 Split
 
 ```
-arr = [2, 8, 4, 7, 1, 6, 5, 3]
-low = 0, high = 7
+[12, 8, 9, 3, 11, 5, 4]
+          /              \
+ [12, 8, 9, 3]        [11, 5, 4]
 ```
 
 ---
 
-## 🪜 Step 1: Call stack starts
+# 🔥 **Step 2 — Split Left Part [12, 8, 9, 3]**
 
 ```
-mergeSort(arr, 0, 7)
+[12, 8, 9, 3]
+      /       \
+ [12, 8]     [9, 3]
 ```
 
-`mid = (0 + 7)/2 = 3`
-
-So we will:
+### Split [12, 8]
 
 ```
-mergeSort(arr, 0, 3)   // Left half
-mergeSort(arr, 4, 7)   // Right half
-mergee(arr, mid=3, low=0, high=7)
+[12, 8]
+  /   \
+[12] [8]   → merge → [8, 12]
 ```
 
-But recursion goes **depth-first**, so we handle `(0,3)` first.
+### Split [9, 3]
+
+```
+[9, 3]
+  /   \
+[9] [3]   → merge → [3, 9]
+```
+
+### Now merge the two results:
+
+```
+Left:  [8, 12]
+Right: [3, 9]
+
+Merge comparison:
+8 vs 3 → take 3
+8 vs 9 → take 8
+12 vs 9 → take 9
+Take leftover 12
+
+→ [3, 8, 9, 12]
+```
+
+Left half sorted becomes:
+
+```
+[3, 8, 9, 12]
+```
 
 ---
 
-# 🧩 LEVEL 1 — mergeSort(arr, 0, 3)
+# 🔥 **Step 3 — Split Right Part [11, 5, 4]**
 
-mid = 1
-We call:
+```
+[11, 5, 4]
+     /      \
+  [11]    [5, 4]
+```
+
+### Split [5, 4]
+
+```
+[5, 4]
+  /   \
+[5]  [4]   → merge → [4, 5]
+```
+
+### Now merge:
+
+Left = [11]
+Right = [4, 5]
+
+```
+11 vs 4 → take 4
+11 vs 5 → take 5
+leftover 11
+
+→ [4, 5, 11]
+```
+
+Right half sorted becomes:
+
+```
+[4, 5, 11]
+```
+
+---
+
+# 🔥 **Final Merge (Left + Right)**
+
+Left sorted  =
+
+```
+[3, 8, 9, 12]
+```
+
+Right sorted =
+
+```
+[4, 5, 11]
+```
+
+### Now merge step-by-step:
+
+| L  | R  | Action           |
+| -- | -- | ---------------- |
+| 3  | 4  | take 3           |
+| 8  | 4  | take 4           |
+| 8  | 5  | take 5           |
+| 8  | 11 | take 8           |
+| 9  | 11 | take 9           |
+| 12 | 11 | take 11          |
+| 12 | —  | take leftover 12 |
+
+### Result after merging:
+
+```
+[3, 4, 5, 8, 9, 11, 12]
+```
+
+---
+
+# 🎉 **FINAL OUTPUT**
+
+\[
+\boxed{3,\ 4,\ 5,\ 8,\ 9,\ 11,\ 12}
+\]
+
+
+
+---
+---
+---
+
+
+> **“How does recursion actually flow?”**
+> Why left splits… then right… and when does merge get called?
+
+---
+
+# ✅ **First: Your mergeSort Function**
+
+```
+void mergeSort(int arr[], int low, int high)
+{
+    if (low >= high)
+        return;
+
+    int mid = (low + high) / 2;
+
+    mergeSort(arr, low, mid);      // 1. sort left
+    mergeSort(arr, mid + 1, high); // 2. sort right
+
+    mergee(arr, mid, low, high);   // 3. merge both sorted parts
+}
+```
+
+---
+
+# ⭐ KEY CONCEPT (SUPER IMPORTANT)
+
+**Recursion always goes FULL left first**
+(because of the first `mergeSort(arr, low, mid)`).
+
+It will keep splitting left left left left…
+until a single element remains.
+
+Then it returns back and merges.
+
+After finishing left half completely,
+only then it goes to right half.
+
+---
+
+# 🎯 We will dry-run EXACTLY your code for:
+
+```
+arr = {12, 8, 9, 3, 11, 5, 4}    // indexes 0 to 6
+```
+
+---
+
+# 🚀 **FULL EXECUTION FLOW (Like CPU does it)**
+
+### 📌 Initial call:
+
+```
+mergeSort(arr, 0, 6)
+```
+
+## 1️⃣ First split (Level 0)
+
+```
+low=0, high=6
+mid=3
+```
+
+So it calls:
+
+### LEFT:
+
+```
+mergeSort(arr, 0, 3)
+```
+
+---
+
+# 🟦 **GO LEFT (deep recursion)**
+
+## 2️⃣ Level 1: mergeSort(arr, 0, 3)
+
+```
+low=0, high=3 → mid=1
+```
+
+Call left again:
+
+### LEFT:
 
 ```
 mergeSort(arr, 0, 1)
-mergeSort(arr, 2, 3)
-mergee(arr, mid=1, low=0, high=3)
 ```
-
-Now again, first `(0,1)` is handled.
 
 ---
 
-# 🧩 LEVEL 2 — mergeSort(arr, 0, 1)
+# 🟩 **Go deeper left**
 
-mid = 0
-We call:
+## 3️⃣ Level 2: mergeSort(arr, 0, 1)
+
+```
+low=0, high=1 → mid=0
+```
+
+Call left:
+
+### LEFT:
 
 ```
 mergeSort(arr, 0, 0)
+```
+
+---
+
+# 🟥 **Single element → returns**
+
+```
+mergeSort(0,0) → low>=high → return
+```
+
+Now right:
+
+```
 mergeSort(arr, 1, 1)
+```
+
+Also returns.
+
+Now merge:
+
+```
 mergee(arr, mid=0, low=0, high=1)
 ```
 
----
-
-## ▶️ mergeSort(arr, 0, 0)
-
-`low >= high`, so it **returns immediately** (array of one element).
-
-Return to parent call (arr, 0, 1).
+This merges **[12] and [8]**.
 
 ---
 
-## ▶️ mergeSort(arr, 1, 1)
+# ⬅️ Backtracking to Level 1
 
-`low >= high`, return immediately.
+Now right branch of (0,3):
 
-Now it’s time to **merge arr[0..1] = [2,8]**
+```
+mergeSort(arr, 2, 3)
+```
 
 ---
 
-# 🧩 mergee(arr, mid=0, low=0, high=1)
+# 🟦 **New right subproblem**
 
-Let’s dry-run inside the merge step-by-step.
-
-| Variables | Value       |
-| --------- | ----------- |
-| left      | 0           |
-| right     | mid + 1 = 1 |
-| temp      | []          |
-
-Now we compare:
+## 4️⃣ mergeSort(arr, 2, 3)
 
 ```
-arr[left] = arr[0] = 2
-arr[right] = arr[1] = 8
+low=2, high=3 → mid=2
 ```
 
-Since 2 <= 8 → push 2 → temp = [2]
-Increment `left = 1`
-
-Now `left = 1` > mid = 0, so exit first while loop.
-
-Then copy remaining right side:
-→ push arr[1] = 8 → temp = [2, 8]
-
-Finally copy back:
+Call left:
 
 ```
-arr[0] = 2
-arr[1] = 8
+mergeSort(arr, 2, 2) → returns
 ```
 
-✅ arr becomes `[2, 8, 4, 7, 1, 6, 5, 3]`
-
-Return to mergeSort(arr, 0, 3).
-
----
-
-# 🧩 LEVEL 2 — mergeSort(arr, 2, 3)
-
-mid = 2
-We call:
+Call right:
 
 ```
-mergeSort(arr, 2, 2)
-mergeSort(arr, 3, 3)
+mergeSort(arr, 3, 3) → returns
+```
+
+Merge:
+
+```
 mergee(arr, mid=2, low=2, high=3)
 ```
 
-Both left and right have single elements.
-
-Now merge arr[2..3] = [4,7]
+This merges **[9] and [3]**.
 
 ---
 
-## ▶️ mergee(arr, mid=2, low=2, high=3)
+# ⬅️ Back to (0,3)
+
+Now merge two sorted halves:
 
 ```
-left = 2, right = 3
-arr[2] = 4, arr[3] = 7
-4 <= 7 → push 4 → temp=[4]
-left=3 → left>mid → exit loop
-Remaining right: push 7 → temp=[4,7]
-Copy back:
-arr[2]=4, arr[3]=7
+Left sorted part  = indexes 0 to 1 
+Right sorted part = indexes 2 to 3
+
+mergee(arr, mid=1, low=0, high=3)
 ```
 
-✅ arr stays `[2,8,4,7,1,6,5,3]`
+This gives **[3, 8, 9, 12]**.
 
 ---
 
-# 🧩 mergee(arr, mid=1, low=0, high=3)
+# ⬅️ Finished full left half of the main call.
 
-Now merge [2,8] and [4,7].
-
-Initialize:
+Now CPU goes to original right half:
 
 ```
-left=0, right=2, temp=[]
+mergeSort(arr, 4, 6)
 ```
-
-Now step by step:
-
-| Step | Compare | Smaller | temp    | left | right            |
-| ---- | ------- | ------- | ------- | ---- | ---------------- |
-| 1    | 2 vs 4  | 2       | [2]     | 1    | 2                |
-| 2    | 8 vs 4  | 4       | [2,4]   | 1    | 3                |
-| 3    | 8 vs 7  | 7       | [2,4,7] | 1    | 4 (out of range) |
-
-Now left part still has 8 left → push → [2,4,7,8]
-
-Copy back to arr[0..3]:
-
-```
-arr = [2,4,7,8,1,6,5,3]
-```
-
-✅ Left half done and sorted.
 
 ---
 
-# 🧩 LEVEL 1 — mergeSort(arr, 4, 7)
+# 🟪 **Handle Right Half (4,6)**
 
-Now recursion continues for right side.
+## 5️⃣ mergeSort(arr, 4, 6)
 
-mid = (4+7)/2 = 5
-We call:
+```
+low=4, high=6 → mid=5
+```
+
+Call left:
 
 ```
 mergeSort(arr, 4, 5)
-mergeSort(arr, 6, 7)
-mergee(arr, mid=5, low=4, high=7)
 ```
 
 ---
 
-## ▶️ mergeSort(arr, 4, 5)
+# 🟨 Splitting (4,5)
 
-mid = 4
+## 6️⃣ mergeSort(arr, 4, 5)
 
 ```
-mergeSort(arr, 4, 4)
-mergeSort(arr, 5, 5)
+mid = 4
+```
+
+Left:
+
+```
+mergeSort(arr, 4, 4) → returns
+```
+
+Right:
+
+```
+mergeSort(arr, 5, 5) → returns
+```
+
+Merge:
+
+```
 mergee(arr, mid=4, low=4, high=5)
 ```
 
-### mergee for [1,6]:
-
-left=4, right=5
-1 <= 6 → push 1
-Remaining → push 6
-✅ arr unchanged `[2,4,7,8,1,6,5,3]`
+This merges **[11] and [5] → [5,11]**.
 
 ---
 
-## ▶️ mergeSort(arr, 6, 7)
+# ⬅️ Back to (4,6)
 
-mid = 6
+Right:
 
 ```
-mergeSort(arr, 6, 6)
-mergeSort(arr, 7, 7)
-mergee(arr, mid=6, low=6, high=7)
+mergeSort(arr, 6, 6) → returns
 ```
 
-Merging [5,3]:
-
-| Compare           | Smaller | temp |
-| ----------------- | ------- | ---- |
-| 5 vs 3            | 3       | [3]  |
-| Remaining left: 5 | [3,5]   |      |
-
-✅ arr becomes `[2,4,7,8,1,6,3,5]`
-
----
-
-## ▶️ mergee(arr, mid=5, low=4, high=7)
-
-Merging [1,6] and [3,5]
-left=4, right=6
-
-| Step               | Compare   | Smaller | temp    | left | right           |
-| ------------------ | --------- | ------- | ------- | ---- | --------------- |
-| 1                  | 1 vs 3    | 1       | [1]     | 5    | 6               |
-| 2                  | 6 vs 3    | 3       | [1,3]   | 5    | 7               |
-| 3                  | 6 vs 5    | 5       | [1,3,5] | 5    | 8(out of range) |
-| Remaining left → 6 | [1,3,5,6] |         |         |      |                 |
-
-✅ arr becomes `[2,4,7,8,1,3,5,6]`
-
----
-
-# 🧩 FINAL MERGE → mergee(arr, mid=3, low=0, high=7)
-
-Merging:
-Left = [2,4,7,8] (0–3)
-Right = [1,3,5,6] (4–7)
-
-Initialize: `left=0, right=4`
-
-| Step                       | Compare           | Smaller | temp          | left | right           |
-| -------------------------- | ----------------- | ------- | ------------- | ---- | --------------- |
-| 1                          | 2 vs 1            | 1       | [1]           | 0    | 5               |
-| 2                          | 2 vs 3            | 2       | [1,2]         | 1    | 5               |
-| 3                          | 4 vs 3            | 3       | [1,2,3]       | 1    | 6               |
-| 4                          | 4 vs 5            | 4       | [1,2,3,4]     | 2    | 6               |
-| 5                          | 7 vs 5            | 5       | [1,2,3,4,5]   | 2    | 7               |
-| 6                          | 7 vs 6            | 6       | [1,2,3,4,5,6] | 2    | 8(out of range) |
-| Remaining left → push 7, 8 | [1,2,3,4,5,6,7,8] |         |               |      |                 |
-
-✅ Final arr = `[1,2,3,4,5,6,7,8]`
-
----
-
-# 🧭 Execution Order Summary
+Now merge:
 
 ```
-mergeSort(0,7)
- ├── mergeSort(0,3)
- │    ├── mergeSort(0,1)
- │    │    ├── mergeSort(0,0)
- │    │    ├── mergeSort(1,1)
- │    │    └── mergee(0,1)
- │    ├── mergeSort(2,3)
- │    │    ├── mergeSort(2,2)
- │    │    ├── mergeSort(3,3)
- │    │    └── mergee(2,3)
- │    └── mergee(0,3)
- ├── mergeSort(4,7)
- │    ├── mergeSort(4,5)
- │    │    ├── mergeSort(4,4)
- │    │    ├── mergeSort(5,5)
- │    │    └── mergee(4,5)
- │    ├── mergeSort(6,7)
- │    │    ├── mergeSort(6,6)
- │    │    ├── mergeSort(7,7)
- │    │    └── mergee(6,7)
- │    └── mergee(4,7)
- └── mergee(0,7)
+mergee(arr, mid=5, low=4, high=6)
+```
+
+This merges **[5,11]** and **[4] → [4,5,11]**
+
+---
+
+# ⬆️ Finally merge left + right of main call
+
+Merge:
+
+```
+mergee(arr, mid=3, low=0, high=6)
+```
+
+Left  = **[3,8,9,12]**
+Right = **[4,5,11]**
+
+Final array =
+
+```
+[3,4,5,8,9,11,12]
 ```
 
 ---
 
-## 💡 What’s Happening Intuitively
+# 🧠 **SUMMARY OF EXECUTION FLOW**
 
-Think of it like **splitting the array in half over and over**, until every part is just one number — then you start **gluing them back** together in sorted order.
-
-Visually:
+Think of recursion as:
 
 ```
-[2,8,4,7,1,6,5,3]
-     ↓ split
-[2,8,4,7]       [1,6,5,3]
-   ↓                ↓
-[2,8] [4,7]     [1,6] [5,3]
- ↓     ↓          ↓     ↓
-[2,8] [4,7]     [1,6] [3,5]
-   ↓                ↓
- [2,4,7,8]       [1,3,5,6]
-         ↓ merge
-   [1,2,3,4,5,6,7,8]
+LEFT → LEFT → LEFT → (merge)
+    ↑ return
+LEFT → RIGHT → (merge)
+↑ merge whole left
+
+then go RIGHT half
+
+RIGHT → LEFT → (merge)
+RIGHT → RIGHT → (merge)
+↑ merge whole right
+
+finally merge everything
+```
+
+---
+---
+
+# 🌳 **FULL MERGE SORT RECURSION TREE**
+
+(For `mergeSort(arr, 0, 6)`)
+
+```
+                                     mergeSort(0,6)
+                                   /                \
+                              (0,3)                 (4,6)
+                           /        \             /       \
+                       (0,1)       (2,3)       (4,5)     (6,6)
+                     /      \     /     \     /     \
+                (0,0)     (1,1) (2,2) (3,3) (4,4) (5,5)
+```
+
+---
+
+# 🔥 **NOW LET’S ADD MERGE STEPS**
+
+Merge only happens **when returning**, after both children are done.
+
+I will show STEP-BY-STEP.
+
+---
+
+# ⭐ Level 3 → Base cases
+
+```
+(0,0) (1,1) (2,2) (3,3) (4,4) (5,5) (6,6)
+```
+
+These RETURN immediately (they are single elements).
+
+---
+
+# ⭐ Level 2 → Merges happening now
+
+### After (0,0) and (1,1) return:
+
+```
+merge(0,1)
+```
+
+After (2,2) and (3,3) return:
+
+```
+merge(2,3)
+```
+
+After (4,4) and (5,5) return:
+
+```
+merge(4,5)
+```
+
+Tree with merges:
+
+```
+                    (0,6)
+                 /           \
+          (0,3)                (4,6)
+         /     \              /     \
+    (0,1)     (2,3)       (4,5)     (6,6)
+    /   \     /   \       /   \
+(0,0)(1,1)(2,2)(3,3) (4,4)(5,5)
+
+     ↑        ↑        ↑
+  merge     merge     merge
+  (0,1)     (2,3)     (4,5)
+```
+
+---
+
+# ⭐ Level 1 → More merges
+
+Now left part `(0,3)` merges its children:
+
+```
+merge(0,3)
+```
+
+Right part `(4,6)` merges its children:
+
+```
+merge(4,6)
+```
+
+Tree now:
+
+```
+                    (0,6)
+                 /           \
+          (0,3)                (4,6)
+           ↑                    ↑
+       merge(0,3)         merge(4,6)
+
+         /     \            /    \
+    merge    merge     merge     (6,6)
+    (0,1)    (2,3)     (4,5)
+```
+
+---
+
+# ⭐ FINAL MERGE (root level)
+
+After both sides `(0,3)` and `(4,6)` are sorted:
+
+```
+merge(0,6)
+```
+
+This gives the **final sorted array**.
+
+---
+
+# 🎉 **FINAL RECURSION + MERGE TREE**
+
+```
+                                   mergeSort(0,6)
+                                  /               \
+                         mergeSort(0,3)       mergeSort(4,6)
+                           /        \            /       \
+                  mergeSort(0,1)  mergeSort(2,3)  mergeSort(4,5)  (6,6)
+                   /      \        /      \        /      \
+               (0,0)    (1,1)   (2,2)   (3,3)   (4,4)   (5,5)
+
+               <-- merge(0,1)    <-- merge(2,3)   <-- merge(4,5)
+                      \               /               /
+                     merge(0,3)     merge(4,6)
+                          \           /
+                          merge(0,6)   <-- FINAL
+```
+
+---
+
+# ✔️ **IMPORTANT: Flow order CPU follows**
+
+### **SPLIT phase (going down the tree):**
+
+```
+left → left → left → hit base
+```
+
+### **MERGE phase (going up the tree):**
+
+```
+backtrack → merge → backtrack → merge → backtrack → merge
 ```
