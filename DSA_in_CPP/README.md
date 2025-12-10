@@ -18,19 +18,17 @@
 
 ---
 
-### DSA finished upto video number: 42 > 4:04
-
-- remaining count_inversion
+### DSA finished upto video number: 46 
 
 ---
 
-### In striver website the DSA finished up :
-    -> Step3 > Lec 3: Hard
+### In striver website the DSA Going on:
+
+> Step 4 : Binary Search [1D, 2D Arrays, Search Space] > Lec 1: BS on 1D Arrays
 
 ---
 
 ### leetcode problem lefts:
-
 
 ---
 
@@ -41,9 +39,10 @@
 3. Sliding Window, Two Pointer Approaches
 4. Dutch National Flag Algorithm
 5. Moore’s Voting Algorithm
-6. Kadane's Algorithm
+6. Kadane's Algorithm [click](./day-9/notes/04_max_subarray_sum.md)
 7. Combinatorics (nCr)
 8. GAP method [click](./day-12/notes/05_gap.md)
+9. Binay Search [click](./day-13/notes/05_binary_search.md)
 
 ---
 
