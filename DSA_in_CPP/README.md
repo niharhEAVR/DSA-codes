@@ -18,7 +18,7 @@
 
 ---
 
-### DSA finished upto video number: 46 
+### DSA finished upto video number: 50
 
 ---
 
@@ -35,7 +35,7 @@
 ## Algorithms or Concepts Learned so far:
 
 1. Time Complexity and Space Complexity (folder: day-1/notes) [click](./day-1/notes/02_timeComplexity.md)
-2. Searching, Sorting & Recursion Algoritms (folder: day-2,3,4,5) [click](./day-5/notes/01_selection_sort.md)
+2. Searching, Sorting & Recursion Algorithms (folder: day-2,3,4,5) [click](./day-5/notes/01_selection_sort.md)
 3. Sliding Window, Two Pointer Approaches
 4. Dutch National Flag Algorithm
 5. Moore’s Voting Algorithm
