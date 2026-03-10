@@ -18,7 +18,7 @@
 
 ---
 
-### DSA finished upto video number: 50
+### DSA finished upto video number: 47
 
 ---
 
@@ -28,21 +28,21 @@
 
 ---
 
-### leetcode problem lefts:
+### leetcode problems left:
 
 ---
 
 ## Algorithms or Concepts Learned so far:
 
-1. Time Complexity and Space Complexity (folder: day-1/notes) [click](./day-1/notes/02_timeComplexity.md)
-2. Searching, Sorting & Recursion Algorithms (folder: day-2,3,4,5) [click](./day-5/notes/01_selection_sort.md)
+1. Time Complexity and Space Complexity (folder: day-1/notes) [click](./01_PreDefined_Algorithms/day-1/notes/02_timeComplexity.md)
+2. Searching, Sorting & Recursion Algorithms (folder: day-2,3,4,5) [click](./01_PreDefined_Algorithms/day-5/notes/01_selection_sort.md)
 3. Sliding Window, Two Pointer Approaches
 4. Dutch National Flag Algorithm
 5. Moore’s Voting Algorithm
-6. Kadane's Algorithm [click](./day-9/notes/04_max_subarray_sum.md)
+6. Kadane's Algorithm [click](./02_Array/day-9/notes/04_max_subarray_sum.md)
 7. Combinatorics (nCr)
-8. GAP method [click](./day-12/notes/05_gap.md)
-9. Binay Search [click](./day-13/notes/05_binary_search.md)
+8. GAP method [click](./02_Array/day-12/notes/05_gap.md)
+9. Binay Search [click](./03_Binary_Search/day-13/notes/05_binary_search.md)
 
 ---
 
