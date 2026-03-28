@@ -6,6 +6,8 @@
    * 30 minutes of Optimal solution re-watching or trying to understand again
    * 30 minutes of start again solving the problem (No help, only by your own) or comparing with your own solution
 
+### Per topic do only 12 vidoes max (leave hard problems for now)
+
 ---
 
 ### Inportant links!
@@ -18,7 +20,7 @@
 
 ---
 
-### DSA finished upto video number: 47
+### DSA finished upto video number: 51
 
 ---
 

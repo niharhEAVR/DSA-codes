@@ -68,11 +68,11 @@ int optimal(std::vector<int> &nums, int target)
 int main()
 {
 
-    std::vector<int> arr = {1,0,1,1,1};
-    int target = 0;
+    // std::vector<int> arr = {1,0,1,1,1};
+    // int target = 0;
 
-    // std::vector<int> arr = {2,5,6,0,0,1,2};
-    // int target = 3;
+    std::vector<int> arr = {2,5,6,0,0,1,2};
+    int target = 3;
 
 
     bool result = optimal(arr, target);

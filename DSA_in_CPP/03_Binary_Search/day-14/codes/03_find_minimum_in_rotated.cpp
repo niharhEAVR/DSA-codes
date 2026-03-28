@@ -60,24 +60,25 @@ int optimal(std::vector<int> &nums)
 }
 //   TC=O(log n), SC=O(1)
 
-// Optimal Approach by striver
+// Optimal Approach by me again
 int optimalTwo(std::vector<int> &nums)
 {
-    int low = 0, high = nums.size() - 1;
     int lowest = INT_MAX;
+    int low{}, high = nums.size() - 1;
     while (low <= high)
     {
         int mid = low + (high - low) / 2;
-
         if (nums[low] <= nums[mid])
         {
-            lowest = std::min(lowest, nums[low]);
+            if (nums[low] < lowest)
+                lowest = nums[low];
             low = mid + 1;
         }
         else
         {
+            if (nums[mid] < lowest)
+                lowest = nums[mid];
             high = mid - 1;
-            lowest = std::min(lowest, nums[mid]);
         }
     }
     return lowest;
@@ -87,14 +88,14 @@ int optimalTwo(std::vector<int> &nums)
 int main()
 {
 
-    // std::vector<int> arr = {3,4,5,1,2};
+    // std::vector<int> arr = {3, 4, 5, 1, 2};
 
-    // std::vector<int> arr = {2, 1};
+    std::vector<int> arr = {2, 1};
 
-    std::vector<int> arr = {11, 13, 15, 17};
+    // std::vector<int> arr = {11, 13, 15, 17};
 
-    // bool result = optimal(arr);
-    bool result = optimalTwo(arr);
+    // int result = optimal(arr);
+    int result = optimalTwo(arr);
 
     std::cout << "result: " << result << std::endl;
     return 0;
