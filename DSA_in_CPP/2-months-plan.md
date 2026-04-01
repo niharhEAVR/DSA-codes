@@ -3,6 +3,8 @@
 | Topic                        | Total | You Should Do      |
 | ---------------------------- | ----- | ------------------ |
 | Binary Search                | 32    | **18**             |
+| Binary Tree                  | 39    | **22** 🔥          |
+| BST                          | 16    | **8**              |
 | Strings                      | 24    | **10**             |
 | Linked List                  | 31    | **15**             |
 | Recursion                    | 25    | **12**             |
@@ -12,8 +14,6 @@
 | Heaps                        | 17    | **10**             |
 | Graphs                       | 53    | **28** 🔥          |
 | Greedy                       | 16    | **8**              |
-| Binary Tree                  | 39    | **22** 🔥          |
-| BST                          | 16    | **8**              |
 | Dynamic Programming          | 56    | **32** 🔥🔥        |
 | Trie                         | 7     | **0–2 (optional)** |
 

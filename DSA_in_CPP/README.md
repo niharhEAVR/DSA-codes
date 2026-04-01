@@ -6,8 +6,6 @@
    * 30 minutes of Optimal solution re-watching or trying to understand again
    * 30 minutes of start again solving the problem (No help, only by your own) or comparing with your own solution
 
-### Per topic do only 12 vidoes max (leave hard problems for now)
-
 ---
 
 ### Inportant links!
@@ -20,7 +18,11 @@
 
 ---
 
-### DSA finished upto video number: 51
+### DSA playlist progress:
+
+1. Array = complete
+2. Binary Search = upto video no.58
+3. Binary Tree = upto video no.77
 
 ---
 
