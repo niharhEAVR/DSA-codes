@@ -2,7 +2,7 @@
 
 | Topic                        | Total | You Should Do      |
 | ---------------------------- | ----- | ------------------ |
-| Binary Search                | 32    | **18**             |
+| Binary Search                | 32    | **18**    ✔️        |
 | Binary Tree                  | 39    | **22** 🔥          |
 | BST                          | 16    | **8**              |
 | Strings                      | 24    | **10**             |
