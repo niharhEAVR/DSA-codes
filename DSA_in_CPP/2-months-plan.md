@@ -1,14 +1,15 @@
 # 📊 Correct Distribution (EXACT = 180)
 
-| Topic                        | Total | You Should Do      |
-| ---------------------------- | ----- | ------------------ |
-| Binary Search                | 32    | **18**    ✔️        |
-| Binary Tree                  | 39    | **22** 🔥          |
-| BST                          | 16    | **8**              |
-| Strings                      | 24    | **10**             |
-| Linked List                  | 31    | **15**             |
-| Recursion                    | 25    | **12**             |
-| Bit Manipulation             | 25    | **8**              |
+| Topic                        | Total | You Should Do      | Completed the series   |
+| ---------------------------- | ----- | ------------------ | ---------------------- |
+| Array                        | 40    | **25**    ✔️       |      ✅               |
+| Binary Search                | 32    | **18**    ✔️       |                        |
+| Binary Tree                  | 39    | **23** 🔥  ✔️     |                         |
+| BST                          | 16    | **8**      ✔️      |                        |
+| Strings                      | 24    | **10**             |                        |
+| Linked List                  | 31    | **15**             |                         |
+| Recursion                    | 25    | **12**             |                         |
+| Bit Manipulation             | 25    | **8**              |                           |
 | Stack & Queue                | 30    | **15**             |
 | Sliding Window / Two Pointer | 12    | **10**             |
 | Heaps                        | 17    | **10**             |
@@ -19,7 +20,7 @@
 
 ---
 
-### ✅ Total = **180**
+### ✅ Total = **224**
 
 ---
 

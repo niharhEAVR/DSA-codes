@@ -22,7 +22,8 @@
 
 1. Array = complete
 2. Binary Search = upto video no.58
-3. Binary Tree = upto video no.93
+3. Binary Tree = upto video no.95
+3. Binary Search Tree = upto video no.117
 
 ---
 
