@@ -64,3 +64,23 @@ This plan is:
 If you follow this strictly:
 
 > You won’t just “complete a sheet” — you’ll be **dangerous in problem solving**
+
+
+
+
+---
+
+
+# 1 month plan
+
+| Order | Topic                        | Videos |
+| ----- | ---------------------------- | ------ |
+| 1     | Graphs                       | **18** |
+| 2     | Dynamic Programming          | **20** |
+| 3     | Stack & Queue                | **10** |
+| 4     | Linked List                  | **10** |
+| 5     | Sliding Window / Two Pointer | **8**  |
+| 6     | Heaps                        | **6**  |
+| 7     | Recursion                    | **6**  |
+| 8     | Strings                      | **4**  |
+| 9     | Greedy                       | **2**  |

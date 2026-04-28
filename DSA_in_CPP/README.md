@@ -1,7 +1,7 @@
 # DSA Efficiency
 
 ### Rule 60-60-30-30
-   * 60 minutes of wathing the videos, learning the concept, problem statement.
+   * 60 minutes of wathcing the videos, learning the concept, problem statement.
    * 60 minutes of trying self coding the soution of cossesponding problem (try everything, but only for 60 minutes, stop even if you are near to solve)
    * 30 minutes of Optimal solution re-watching or trying to understand again
    * 30 minutes of start again solving the problem (No help, only by your own) or comparing with your own solution
@@ -24,16 +24,7 @@
 2. Binary Search = upto video no.58
 3. Binary Tree = upto video no.95
 3. Binary Search Tree = upto video no.117
-
----
-
-### In striver website the DSA Going on:
-
-> Step 4 : Binary Search [1D, 2D Arrays, Search Space] > Lec 1: BS on 1D Arrays
-
----
-
-### leetcode problems left:
+4. Graph = upto video no.131
 
 ---
 
@@ -48,6 +39,9 @@
 7. Combinatorics (nCr)
 8. GAP method [click](./02_Array/day-12/notes/05_gap.md)
 9. Binay Search [click](./03_Binary_Search/day-13/notes/05_binary_search.md)
+10. Tree [click](./04_Trees/class-16/notes/01_Introduction_to_Trees_.md)
+11. Binary Search Tree [click](./05_BST/class_18/notes/01_bst.md)
+12. Graph [click](./06_Graph/class_19/notes/01_graph.md)
 
 ---
 
@@ -58,10 +52,3 @@
 ### 3. Revise Time & Space complexity sometimes.
 ### 4. Revise C++ STL concepts with its all the properties once a week (sunday most frequently). **
 ### 5. Revisit the Video number 20 for understanding what he tryna say.
-
-
----
-
-### Remindings
-
-1. At least solve one problem a day by yourself. Read the problem statement carefully and understand the approach, but never look at the solution until your DSA practice time is over. If you can’t solve it, carry it over to the next day.
