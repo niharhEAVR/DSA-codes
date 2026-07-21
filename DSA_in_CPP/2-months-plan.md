@@ -6,6 +6,7 @@
 | Binary Search                | 32    | **18**    ✔️       |                        |
 | Binary Tree                  | 39    | **23** 🔥  ✔️     |                         |
 | BST                          | 16    | **8**      ✔️      |                        |
+| Graphs                       | 53    | **28** 🔥          |
 | Strings                      | 24    | **10**             |                        |
 | Linked List                  | 31    | **15**             |                         |
 | Recursion                    | 25    | **12**             |                         |
@@ -13,7 +14,6 @@
 | Stack & Queue                | 30    | **15**             |
 | Sliding Window / Two Pointer | 12    | **10**             |
 | Heaps                        | 17    | **10**             |
-| Graphs                       | 53    | **28** 🔥          |
 | Greedy                       | 16    | **8**              |
 | Dynamic Programming          | 56    | **32** 🔥🔥        |
 | Trie                         | 7     | **0–2 (optional)** |
@@ -64,23 +64,3 @@ This plan is:
 If you follow this strictly:
 
 > You won’t just “complete a sheet” — you’ll be **dangerous in problem solving**
-
-
-
-
----
-
-
-# 1 month plan
-
-| Order | Topic                        | Videos |
-| ----- | ---------------------------- | ------ |
-| 1     | Graphs                       | **18** |
-| 2     | Dynamic Programming          | **20** |
-| 3     | Stack & Queue                | **10** |
-| 4     | Linked List                  | **10** |
-| 5     | Sliding Window / Two Pointer | **8**  |
-| 6     | Heaps                        | **6**  |
-| 7     | Recursion                    | **6**  |
-| 8     | Strings                      | **4**  |
-| 9     | Greedy                       | **2**  |
