@@ -24,7 +24,7 @@
 2. Binary Search = upto video no.58
 3. Binary Tree = upto video no.95
 3. Binary Search Tree = upto video no.117
-4. Graph = upto video no.131
+4. Graph = upto video no.133
 
 ---
 
