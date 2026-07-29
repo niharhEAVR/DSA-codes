@@ -1,5 +1,8 @@
+// #include <bits/stdc++.h>
+
 #include <iostream>
 #include <math.h>
+#include <string>
 
 void changedDirectValueForArr(int arr[][3], int r)
 {

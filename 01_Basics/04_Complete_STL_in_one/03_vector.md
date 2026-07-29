@@ -306,9 +306,11 @@ If you insert or erase from the middle, **all elements after that point are shif
 using namespace std;
 
 int main() {
-    vector<int> v = {10, 20, 30, 40};
+    vector<int> v = {10, 20, 30, 40, 50, 60};
     v.insert(v.begin() + 2, 25);   // Insert 25 at index 2
     v.erase(v.begin() + 1);        // Remove element at index 1
+    v.erase(v.begin() + 2, v.begin() + 4); // [start end) - include start but exclude end
+    // Remove element at index 2 and 3
 
     for (int i : v)
         cout << i << " ";
@@ -318,13 +320,14 @@ int main() {
 **Output:**
 
 ```
-10 25 30 40
+10 25 50 60
 ```
 
 🧩 **Explanation:**
 
-* Inserted 25 at index 2 → `10 20 25 30 40`
-* Erased element at index 1 (20) → `10 25 30 40`
+* Inserted 25 at index 2 → `10 20 25 30 40 50 60`
+* Erased element at index 1 (20) → `10 25 30 40 50 60`
+* Erased element at index 2 and 3 (30,40) → `10 25 50 60`
 * But each operation **moved many elements internally**, making it slower.
 
 ---
