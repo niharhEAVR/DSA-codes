@@ -4,7 +4,7 @@
 
 ## Progress
 
-Video No. 16 will be going on.
+Video No. 17 will be going on.
 
 
 ---
